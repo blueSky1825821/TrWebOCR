@@ -29,12 +29,10 @@ settings = dict(
 
 def make_app():
     from backend.webInterface import tr_run
-    from backend.webInterface import tr_index
 
     return tornado.web.Application([
         (r"/ocr/api/tr-run/", tr_run.TrRun),
         (r"/ocr", tornado.web.RedirectHandler, {"url": "/ocr/"}),
-        (r"/ocr/", tr_index.Index),
         (r"/ocr/(.*)", StaticFileHandler,
          {"path": os.path.join(current_path, "dist/TrWebOcr_fontend"), "default_filename": "index.html"}),
 
