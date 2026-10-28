@@ -32,9 +32,9 @@ def make_app():
     from backend.webInterface import tr_index
 
     return tornado.web.Application([
-        (r"/api/tr-run/", tr_run.TrRun),
-        (r"/", tr_index.Index),
-        (r"/(.*)", StaticFileHandler,
+        (r"/ocr/api/tr-run/", tr_run.TrRun),
+        (r"/ocr/", tr_index.Index),
+        (r"/ocr/(.*)", StaticFileHandler,
          {"path": os.path.join(current_path, "dist/TrWebOcr_fontend"), "default_filename": "index.html"}),
 
     ], **settings)

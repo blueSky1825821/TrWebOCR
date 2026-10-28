@@ -87,7 +87,7 @@ docker run -itd --rm -p 8089:8089 --name trwebocr mmmz/trwebocr:latest
 * Python 使用File上传文件  
 ``` python
 import requests
-url = 'http://192.168.31.108:8089/api/tr-run/'
+url = 'http://192.168.31.108:8089/ocr/api/tr-run/'
 img1_file = {
     'file': open('img1.png', 'rb')
 }
@@ -103,7 +103,7 @@ def img_to_base64(img_path):
         b64 = base64.b64encode(read.read())
     return b64
     
-url = 'http://192.168.31.108:8089/api/tr-run/'
+url = 'http://192.168.31.108:8089/ocr/api/tr-run/'
 img_b64 = img_to_base64('./img1.png')
 res = requests.post(url=url, data={'img': img_b64})
 ```

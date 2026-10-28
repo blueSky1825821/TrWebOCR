@@ -180,8 +180,8 @@ export default {
 
       const _this = this
       axios({
-        // url: '/api/tr-run/',
-        url: '/api/tr-run/',
+        // url: '/ocr/api/tr-run/',
+        url: '/ocr/api/tr-run/',
         method: 'post',
         headers: {
           'Content-Type': 'multipart/form-data',

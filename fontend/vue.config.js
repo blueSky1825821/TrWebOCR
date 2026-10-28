@@ -1,5 +1,5 @@
 module.exports = {
-  // publicPath :'/vue/'
+  publicPath: '/ocr/',
   outputDir: '../backend/dist/TrWebOcr_fontend',
   // productionSourceMap: true,
   configureWebpack: {
@@ -7,7 +7,7 @@ module.exports = {
   },
   devServer: {
     proxy:{
-      '/api':{
+      '/ocr/api':{
         target: 'http://' + process.env.PROXY,
         changeOrigin:true,
       }
